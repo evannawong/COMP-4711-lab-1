@@ -8,7 +8,9 @@
 
 /**
  * Description of Student
- *
+ * This Student class contains the student's first name, surname, email and average grade.
+ * Student also has methods to add email, add grade, calculate average grades
+ * and a print method to format the text output.
  * @author Evanna
  */
 class Student {
