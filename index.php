@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,10 +12,15 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+            /*
+             * This webapp adds 3 new students, sorts the students and prints a sorted list of students. 
+             */
+        
             include('student.php');
 
             $students = array();
             
+            //Student 1
             $first = new Student();
             $first->surname = "Doe";
             $first->first_name = "John";
@@ -25,6 +31,7 @@ and open the template in the editor.
             $first->add_grade(55);
             $students['j123'] = $first;
             
+            //Student 2
             $second = new Student();
             $second->surname = "Einstein";
             $second->first_name = "Albert";
@@ -35,7 +42,21 @@ and open the template in the editor.
             $second->add_grade(80);
             $second->add_grade(50);
             $students['a456'] = $second;
+            
+            //Student 3
+            $third = new Student();
+            $third->surname = "Wong";
+            $third->first_name = "Evanna";
+            $third->add_email('home','evannawong92@gmail.com');
+            $third->add_grade(80);
+            $third->add_grade(84);
+            $third->add_grade(70);
+            $students['e789'] = $third;
+            
+            //sort student array
+            ksort($students);	// one of the many sort functions
 
+            //print array
             foreach($students as $student)
             echo $student->toString();
         ?>
